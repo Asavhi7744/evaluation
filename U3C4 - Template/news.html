@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/Template-U3C4/styles/main.css">
+
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!--DO NOT CHANGE THIS ID's-->
+
+    <div id="container">
+      <div id="sidebar">
+        <!--add your sidebar component here-->
+      </div>
+
+      <div id="main">
+        <!--DO NOT CHANGE THIS ID's-->
+        <!--Show the clicked article in detailed format here ONLY-->
+      </div>
+    </div>
+  </body>
+</html>
+ <script type="module">
+
+
+
+import sidebar from "./components/sidebar.js"
+
+import {displaydetails,getdata,displayData} from "./scripts/main.js"
+
+let leftbar =document.getElementById("sidebar")
+ leftbar.innerHTML=sidebar()
+
+let container =document.getElementById("main")
+
+ let detailed =JSON .parse(localStorage.getItem("detailed"))
+ console.log(detailed)
+
+ let parent =document.getElementById("main")
+ let datashow=displaydetails(detailed,parent)
+ </script>

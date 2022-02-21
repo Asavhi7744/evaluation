@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Template-U3C4/styles/main.css">
+    <title>Document</title>
+    <style>
+
+
+#container{
+    display: flex;
+    height: 600px;
+}
+#sidebar{
+   flex: 2; 
+   border: 1px solid red;
+}
+#main{
+    flex: 8;
+    border: 1px solid red;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,30%);
+
+    grid: 4%;
+}
+
+.images{
+    width: 100%;
+    height: 80%;
+}
+
+
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <!--No need to add sidebar here, directly display search results here only-->
+
+      <!-- show headline, description and image -->
+    </div>
+  </body>
+</html>
+
+<script type="module">
+
+
+import {getdata,displayData} from "./scripts/main.js"
+
+
+
+let search =localStorage.getItem("search")
+
+let res=await getdata(`https://shrouded-earth-23381.herokuapp.com/api/search/?q=${search}`) 
+
+
+let parent =document.getElementById("main")
+
+let display=displayData(res,parent)
+ 
+
+</script>
